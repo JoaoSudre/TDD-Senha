@@ -13,4 +13,13 @@ public class ValidadorSenhaTest {
         assertTrue(resultado.isValido());
         assertTrue(resultado.getErros().isEmpty());
     }
+
+    @Test
+    void deveRejeitarSenhaCurta() {
+        ValidadorSenha validador = new ValidadorSenha();
+        ResultadoValidacao resultado = validador.validar("Sen1!");
+        
+        assertFalse(resultado.isValido());
+        assertTrue(resultado.getErros().contains("A senha deve ter pelo menos 8 caracteres"));
+    }
 }

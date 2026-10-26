@@ -1,7 +1,6 @@
 package com.tdd.senha;
 
 import java.util.List;
-import java.util.ArrayList;
 
 public class ResultadoValidacao {
     private boolean valido;

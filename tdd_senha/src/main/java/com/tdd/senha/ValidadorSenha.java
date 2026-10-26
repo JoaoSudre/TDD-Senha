@@ -12,6 +12,11 @@ public class ValidadorSenha {
             erros.add("A senha deve ter pelo menos 8 caracteres");
         }
 
+        long quantidadeDigitos = senha != null ? senha.chars().filter(Character::isDigit).count() : 0;
+        if (quantidadeDigitos < 2) {
+            erros.add("A senha deve conter pelo menos 2 dígitos");
+        }
+
         boolean valido = erros.isEmpty();
         return new ResultadoValidacao(valido, erros);
     }
